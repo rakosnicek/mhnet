@@ -1,0 +1,1 @@
+log.prior <- function(nw) -sum(lchoose(length(nw$nodes)-1, apply(nw$adjmat,2,sum)))
