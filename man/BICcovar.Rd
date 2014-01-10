@@ -1,8 +1,8 @@
-\name{myBIC}
-\alias{myBIC}
+\name{BICcovar}
+\alias{BICcovar}
 \title{Compute BIC}
 \usage{
-  myBIC(nw, dataset)
+  BICcovar(nw, dataset)
 }
 \arguments{
   \item{nw}{A \code{mhnet} network}
@@ -13,7 +13,7 @@
   BIC score
 }
 \description{
-  Calculate 1/2 * BIC up to constant.
+  Yet to be edited and example given
 }
 \examples{
 1+1 == 2

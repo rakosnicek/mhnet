@@ -26,7 +26,12 @@
   # returns rows of x.1 that are not in x.2    
     x.1p <- do.call("paste", as.data.frame(x.1))
     x.2p <- do.call("paste", as.data.frame(x.2))
-    x.1[! x.1p %in% x.2p, ]
+    rbind(x.1[! x.1p %in% x.2p, ])
+  }
+  
+  nnrow <- function(x) {
+    #hack for  removals == integer(0), to be removed
+    if (length(x)==0) return(0) else return(nrow(x)) 
   }
   
   removals <- which(nw$adjmat == 1, arr.ind=TRUE, useNames = FALSE)
@@ -42,7 +47,7 @@
     reversals <- matrix_diff(reversals, whitelist)
   }
   
-  return(rbind(cbind(rep(1,nrow(removals)), removals), 
-               cbind(rep(2,nrow(additions)), additions), 
-               cbind(rep(3,nrow(reversals)), reversals)))
+  return(rbind(cbind(rep(1,nnrow(removals)), removals), 
+               cbind(rep(2,nnrow(additions)), additions), 
+               cbind(rep(3,nnrow(reversals)), reversals)))
 }
