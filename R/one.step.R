@@ -28,7 +28,7 @@ one.step <- function(nw, dataset, verbose = TRUE, score = BICbnnet, whitelist = 
                      lprior=log.prior, move.score=NULL, move.lprior=NULL, move.proposals=NULL) {
   
   # make sure that no information is missing
-  if (is.null(nw$proposals)) nw$proposals <- make.proposals(nw, whitelist, blacklist)
+  if (is.null(nw$proposals)) nw$proposals <- make.proposals(nw, blacklist, whitelist)
   if (is.null(nw$lprior)) nw$lprior <- lprior(nw)
   if (is.null(nw$bic)) nw$bic <- score(nw, dataset)
   
@@ -48,7 +48,7 @@ one.step <- function(nw, dataset, verbose = TRUE, score = BICbnnet, whitelist = 
   }
   
   # add missing information to the new proposal
-  if (is.null(move.proposals)) nw2$proposals <- make.proposals(nw2) else nw2$proposals <- move.proposals(nw, move, whitelist, blacklist) 
+  if (is.null(move.proposals)) nw2$proposals <- make.proposals(nw2, blacklist, whitelist) else nw2$proposals <- move.proposals(nw, move, whitelist, blacklist) 
   if (is.null(move.lprior)) nw2$lprior <- lprior(nw2) else nw2$lprior <- move.lprior(nw, move) 
   if (is.null(move.score)) nw2$bic <- score(nw2, dataset) else nw2$bic <- move.score(nw, move, dataset)
   

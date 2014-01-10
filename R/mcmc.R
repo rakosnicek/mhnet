@@ -46,7 +46,7 @@ mcmc <- function(start.nw, dataset, reporter, Nsim=1000, burn=0.1, verbose=TRUE,
   if (trace) collect <- list()
   
   for (i in 1:Nsim) {
-    nw <- one.step(nw, dataset, verbose)
+    nw <- one.step(nw, dataset, verbose, score, whitelist, blacklist, lprior, move.score, move.lprior, move.proposals)
     
     if (i > maxburn) {
       output <- output + reporter(nw)

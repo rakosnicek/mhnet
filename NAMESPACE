@@ -1,5 +1,6 @@
 export(add.edge)
 export(BICbnnet)
+export(BICcovar)
 export(empty.network)
 export(export.bnlearn)
 export(import.bnlearn)
