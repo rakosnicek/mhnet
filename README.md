@@ -22,7 +22,7 @@ Create and manipulate directed acyclic graphs
   nw
 ```
 
-Inference 
+Inference on distribution of edges 
 
 ```S
   rg <- tabu(gaussian.test)
@@ -37,7 +37,7 @@ Inference
   strength.plot(export.bnlearn(nw), matrix2strength(A, nw$nodes))
 ```
 
-Implementing own BIC function
+Inference with BIC function specified by the user
 
 ```S
   example <- read.csv("H:\\Projects\\1309 lincRNA\\compilation\\sets\\Gm17403.csv")
