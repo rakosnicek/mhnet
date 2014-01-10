@@ -15,7 +15,7 @@
 #' @export
 #' 
 #' @examples
-#' nw <- empty.network(LETTERS[1:4])
+#' nw <-  empty.network(LETTERS[1:4])
 #' ( nw <- add.edge(nw, "A", "D") )
 #' try(add.edge(nw, "D", "A"))
 
