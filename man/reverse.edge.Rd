@@ -1,0 +1,31 @@
+\name{reverse.edge}
+\alias{reverse.edge}
+\title{An Edge Reversal}
+\usage{
+  reverse.edge(nw, a, b)
+}
+\arguments{
+  \item{nw}{\code{mhnet} network}
+
+  \item{a}{First vertex (an arrow pointing from)}
+
+  \item{b}{Second vertex (an arrow pointing from)}
+}
+\value{
+  \code{mhnet} network
+}
+\description{
+  Reverse a directed edge between two vertices and check
+  for acyclicity.
+}
+\examples{
+nw <- empty.network(LETTERS[1:4])
+nw <- add.edge(nw, "A", "D")
+reverse.edge(nw, "A", "D")
+try(reverse.edge(nw, "D", "A"))
+}
+\seealso{
+  \code{\link{add.edge}}, \code{\link{remove.edge}}
+}
+\keyword{manip}
+

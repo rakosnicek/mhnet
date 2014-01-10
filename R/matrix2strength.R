@@ -1,4 +1,27 @@
-matrix2strength <- function(A, nodes) {
+#' Matrix to Strength
+#' 
+#' Covert matrix with edge probabilities to \code{bn.strength} object.
+#'
+#' @param A Matrix with edge probability (occurence)
+#' @param nodes Names of nodes (ordering correspond to A's rows and columns) 
+#'
+#' @return \code{bn.strength} object
+#'
+#' @keywords manip
+#'
+#' @export
+#' 
+#' @examples
+#' 
+#' rg <- tabu(gaussian.test)
+#' nw <- import.bnlearn(rg)
+#' 
+#' all.edges <- function(nw) nw$adjmat
+#' A <- mcmc(nw, gaussian.test, all.edges, verbose=FALSE, trace=FALSE)
+#' strength.plot(export.bnlearn(nw), matrix2strength(A, nw$nodes))
+
+
+`matrix2strength` <- function(A, nodes) {
   output <- expand.grid(to=nodes,from=nodes)[,2:1]
   output <- subset(output, from!=to)
   output$strength <- NA

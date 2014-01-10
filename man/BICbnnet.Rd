@@ -1,0 +1,33 @@
+\name{BICbnnet}
+\alias{BICbnnet}
+\title{BIC as implemented in bnlearn}
+\usage{
+  BICbnnet(nw, dataset)
+}
+\arguments{
+  \item{nw}{\code{mnnet} object}
+
+  \item{dataset}{A data frame to use}
+}
+\value{
+  real number
+}
+\description{
+  Convert \code{mnnet} network into \code{bnlearn} object
+  and use \code{BIC.bn} to calculate the BIC.
+}
+\note{
+  BIC is not calculated as usual -2*log-likelihood +
+  log(n)*npar, but as log-likelihood - log(n)*npar/2
+}
+\examples{
+rg <- tabu(learning.test)
+nw <- import.bnlearn(rg)
+BIC(rg, learning.test)
+BICbnnet(nw, learning.test)
+}
+\seealso{
+  \code{\link{one.step}}
+}
+\keyword{manip}
+

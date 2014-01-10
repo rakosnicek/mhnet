@@ -1,3 +1,17 @@
+#' Compute BIC
+#' 
+#' Yet to be edited and example given
+#'
+#' @param nw A \code{mhnet} network 
+#' @param dataset Observations 
+#'
+#' @return BIC score
+#'
+#' @keywords manip
+#'
+#' @examples
+#' 1+1 == 2
+
 myBIC <- function(nw, dataset) {
   lnobs <- log(nrow(dataset))
   

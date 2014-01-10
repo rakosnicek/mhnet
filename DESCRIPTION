@@ -1,9 +1,31 @@
 Package: mhnet
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Metropolis-Hastings type simulation and inference for Bayesian Networks
+Version: 0.2-0
 Date: 2014-01-06
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Authors@R: c(person("Petr", "Simecek", role = c("aut", "cre", "ths"),
+    email = "simecek@gmail.com"))
+Description: Sampling from distribution factorizing according to a directed
+    acyclic graph.
+Depends:
+    R(>= 2.15.0),
+    bnlearn,
+    Rgraphviz
+Suggests:
+    knitr
+License: GPL-3
+Collate:
+    'add.edge.R'
+    'import.bnlearn.R'
+    'log.prior.R'
+    'make.proposals.R'
+    'matrix2strength.R'
+    'mcmc.R'
+    'myBIC.R'
+    'one.step.R'
+    'remove.edge.R'
+    'reverse.edge.R'
+    'empty.network.R'
+    'plot.mhnet.R'
+    'BICbnnet.R'
+    'export.bnlearn.R'

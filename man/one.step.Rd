@@ -1,0 +1,51 @@
+\name{one.step}
+\alias{one.step}
+\title{Metropolis-Hastings Simulation}
+\usage{
+  one.step(nw, dataset, verbose = TRUE, score = BICbnnet,
+    whitelist = NULL, blacklist = NULL, lprior = log.prior,
+    move.score = NULL, move.lprior = NULL,
+    move.proposals = NULL)
+}
+\arguments{
+  \item{nw}{\code{mhnet} network}
+
+  \item{dataset}{A data frame to use}
+
+  \item{score}{A function to calculate BIC}
+
+  \item{blacklist}{For move proposal, 2-column matrix or
+  data.frame with forbidden edges (vertices as numbers)}
+
+  \item{whitelist}{For move proposal, 2-column matrix or
+  data.frame with compulsory edges (vertices as numbers)}
+
+  \item{lprior}{Log of prior distribution of acyclic
+  directed graph}
+
+  \item{move.score}{A function to adjust the score to
+  addition / removal / reversal of an edge}
+
+  \item{move.lprior}{A function to adjust the log-prior to
+  addition / removal / reversal of an edge}
+
+  \item{move.proposals}{A function to adjust the proposals
+  to addition / removal / reversal of an edge}
+
+  \item{verbose}{If TRUE then report messanges and plots
+  will be given}
+}
+\value{
+  \code{mhnet} network
+}
+\description{
+  Do one step of Metropolis-Hastings algorithm: Propose a
+  new graph and either accept or decline it.
+}
+\examples{
+rg <- tabu(learning.test)
+nw <- import.bnlearn(rg)
+one.step(nw, learning.test)
+}
+\keyword{models}
+

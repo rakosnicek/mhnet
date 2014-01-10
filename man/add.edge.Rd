@@ -1,0 +1,30 @@
+\name{add.edge}
+\alias{add.edge}
+\title{An Edge Addition}
+\usage{
+  add.edge(nw, a, b)
+}
+\arguments{
+  \item{nw}{\code{mhnet} network}
+
+  \item{a}{First vertex (an arrow pointing from)}
+
+  \item{b}{Second vertex (an arrow pointing from)}
+}
+\value{
+  \code{mhnet} network
+}
+\description{
+  Add a directed edge between two vertices and check for
+  acycliclity.
+}
+\examples{
+nw <- empty.network(LETTERS[1:4])
+( nw <- add.edge(nw, "A", "D") )
+try(add.edge(nw, "D", "A"))
+}
+\seealso{
+  \code{\link{remove.edge}}, \code{\link{reverse.edge}}
+}
+\keyword{manip}
+
