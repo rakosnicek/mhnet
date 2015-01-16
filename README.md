@@ -7,7 +7,7 @@
 ```S
     # install.packages("devtools")
     library(devtools)
-    install_github("rakosnicek/mhnet")
+    install_github("simecek/mhnet")
 ```
 
 ## Example(s)
