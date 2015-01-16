@@ -11,7 +11,6 @@
 #' 
 #' @export 
 #'
-#' @examples
 #' 
 `BICcovar2` <- function (nw, dataset) 
 {
