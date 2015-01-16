@@ -59,7 +59,7 @@ one.step <- function(nw, dataset, verbose = TRUE, score = BICbnnet, whitelist = 
   if (log(runif(1)) < log.mh.alpha) {
     if (verbose) {
       cat(paste("Accepting", "\n"))
-      plot(nw2$bnlearn)
+      plot(nw2)
       title(main = paste("BIC =", round(nw2$bic,2)))
     }  
     return(nw2)
