@@ -10,6 +10,14 @@
     install_github("simecek/mhnet")
 ```
 
+The package depends on BioConductor 'Rgraphviz' package that can be installed as follows
+
+```S
+    source("http://bioconductor.org/biocLite.R")
+    biocLite("Rgraphviz")
+```
+
+
 ## Example(s)
 
 Create and manipulate directed acyclic graphs
