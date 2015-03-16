@@ -63,7 +63,8 @@ Inference with BIC function specified by the user (Ecsit protein network)
 
   # try 100 steps observing all edges
   all.edges <- function(nw) nw$adjmat
-  mcmc(nw, dataset=Ecsit_network, score=BICcovar2, all.edges, verbose=TRUE, trace=FALSE, Nsim=100, blacklist=forbidden.edges, whitelist=necessary.edges)
+  mcmc(nw, dataset=Ecsit_network, score=BICcovar2, all.edges, verbose=TRUE, trace=FALSE, 
+       Nsim=100, blacklist=forbidden.edges, whitelist=necessary.edges)
 
   # start cluster 
   library(parallel)
@@ -74,7 +75,8 @@ Inference with BIC function specified by the user (Ecsit protein network)
   # running 1000 steps, 10 restarts
   restarts=10
   A = foreach(i=1:restarts, .combine='+') %dopar% { 
-    mcmc(nw, dataset=Ecsit_network, score=BICcovar2, all.edges, verbose=FALSE, trace=FALSE, Nsim=1000, blacklist=forbidden.edges, whitelist=necessary.edges)
+    mcmc(nw, dataset=Ecsit_network, score=BICcovar2, all.edges, verbose=FALSE, trace=FALSE, 
+         Nsim=1000, blacklist=forbidden.edges, whitelist=necessary.edges)
   }
 
   # averaging the results
@@ -114,7 +116,8 @@ Inference with data frame and covariates (Gm17403 lincRNA network)
   
   nw <- nw.start
   nw <- one.step(nw, data, verbose=TRUE, score=BICcovar, blacklist=blacklist)
-  mcmc(nw, dataset=data, score=BICcovar, all.edges, verbose=TRUE, trace=FALSE, Nsim=30, blacklist=forbidden.edges)
+  mcmc(nw, dataset=data, score=BICcovar, all.edges, verbose=TRUE, trace=FALSE, 
+       Nsim=30, blacklist=forbidden.edges)
 ```  
 
 
