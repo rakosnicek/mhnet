@@ -24,7 +24,7 @@ Create and manipulate directed acyclic graphs
   nw
 ```
 
-Inference with BIC function specified by the user
+Inference with BIC function specified by the user (Ecsit protein network)
 
 ```S
   
@@ -88,6 +88,7 @@ Inference with BIC function specified by the user
   stopCluster(cl)
 ```
 
+Inference with data frame and covariates (Gm17403 lincRNA network)
 
 ```S
   data(Gm17403)
