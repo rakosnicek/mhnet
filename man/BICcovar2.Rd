@@ -2,20 +2,29 @@
 % Please edit documentation in R/BICcovar2.R
 \name{BICcovar2}
 \alias{BICcovar2}
-\title{Yet another BIC with covariates}
+\title{BIC for data represented as a list}
 \usage{
 BICcovar2(nw, dataset)
 }
 \arguments{
 \item{nw}{\code{mhnet} network}
 
-\item{dataset}{A list with covariates (matrix) as an attribute}
+\item{dataset}{A list with data with elements in the same order as 'nw' nodes}
 }
 \value{
 real number
 }
 \description{
-Dataset is a list, covartiates are att
+Calculates BIC for the given network and data list.
+}
+\examples{
+data(Ecsit_network)
+nw <- empty.network(c("qEcsit", "qNdufaf1", "qTmem126b", "rEcsit",
+        "rNdufaf1", "rTmem126b", "pEcsit", "pNdufaf1", "pTmem126b"))
+nw <- add.edge(nw, "qEcsit", "rEcsit")
+plot(nw)
+
+BICcovar2(nw, Ecsit_network)
 }
 \keyword{manip}
 

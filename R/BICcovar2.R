@@ -11,7 +11,7 @@
 #' 
 #' @export 
 #'
-#' @example
+#' @examples
 #' data(Ecsit_network)
 #' nw <- empty.network(c("qEcsit", "qNdufaf1", "qTmem126b", "rEcsit", 
 #'         "rNdufaf1", "rTmem126b", "pEcsit", "pNdufaf1", "pTmem126b"))
